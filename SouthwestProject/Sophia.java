@@ -8,6 +8,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Sophia extends Actor
 {
+    private int speed = 2;
     private int baseHP = 100;
     private int HP = baseHP;
     /**
@@ -24,24 +25,23 @@ public class Sophia extends Actor
     {
         // Add your action code here.
        
-       if( Greenfoot.isKeyDown( "right" ) ){
-        setRotation(0);
-        move(1);
-    }
-    if( Greenfoot.isKeyDown( "left" ) ){
-        setRotation(0);
-        move(-1);
-    }
-    if( Greenfoot.isKeyDown( "up" ) ){
-        setRotation(270);
-        move(1);
-    }
-    if( Greenfoot.isKeyDown( "down" ) ){
-        setRotation(90);
-        move(1);
-    }
+        int x = getX();
+        int y = getY();
+        
+        if( Greenfoot.isKeyDown( "right" ) ){
+            x += speed;
+        }
+        if( Greenfoot.isKeyDown( "left" ) ){
+            x -= speed;
+        }
+        if( Greenfoot.isKeyDown( "up" ) ){
+            y -= speed;
+        }
+        if( Greenfoot.isKeyDown( "down" ) ){
+            y += speed;
+        }
 
-
+        setLocation(x, y);
 
     }    
     public void damage(int damage)
