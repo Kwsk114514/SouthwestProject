@@ -14,6 +14,11 @@ public class Enemy1 extends Actor
     private long prevTime = System.currentTimeMillis();
     private long elapsedTime = 0;
     
+    protected void addedToWorld(World world)
+    {
+        getImage().scale(28, 48);
+    }
+    
     /**
      * Act - do whatever the Enemy1 wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
