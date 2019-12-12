@@ -1,6 +1,7 @@
 #Greenfoot project file
 class.Enemy1.image=enemy1.png
 class.EnemyBullet.image=ball.png
+class.HPbar.image=brick.jpg
 class.Sophia.image=stop_r.png
 class.Stage1.image=rio-de-janeiro-vacation-1813384_1280.jpg
 dependency1.from=Enemy1
@@ -11,11 +12,25 @@ dependency2.to=Sophia
 dependency2.type=UsesDependency
 editor.fx.0.height=739
 editor.fx.0.width=816
+<<<<<<< HEAD
 editor.fx.0.x=461
 editor.fx.0.y=203
 height=905
 package.numDependencies=2
 package.numTargets=4
+=======
+<<<<<<< HEAD
+editor.fx.0.x=552
+editor.fx.0.y=100
+height=1056
+=======
+editor.fx.0.x=835
+editor.fx.0.y=117
+height=905
+>>>>>>> a92eed605c9f126622888d574f717c85b79d4236
+package.numDependencies=1
+package.numTargets=5
+>>>>>>> fa8873b7ff9879cc4869ea585da3c8fe2b663ebb
 project.charset=UTF-8
 publish.hasSource=false
 publish.locked=true
@@ -52,14 +67,26 @@ target3.width=80
 target3.x=0
 target3.y=0
 target4.height=50
-target4.name=Sophia
+target4.name=HPbar
 target4.showInterface=false
 target4.type=ClassTarget
 target4.width=80
 target4.x=0
 target4.y=0
+target5.height=50
+target5.name=Sophia
+target5.showInterface=false
+target5.type=ClassTarget
+target5.width=80
+target5.x=0
+target5.y=0
 version=3.0.0
-width=1542
+width=1936
 world.lastInstantiated=Stage1
+<<<<<<< HEAD
 xPosition=182
 yPosition=23
+=======
+xPosition=0
+yPosition=0
+>>>>>>> fa8873b7ff9879cc4869ea585da3c8fe2b663ebb
