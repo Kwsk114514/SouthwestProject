@@ -8,6 +8,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class EnemyBullet extends Actor
 {
+    private int damage = 10;
+    
     public EnemyBullet()
     {
         GreenfootImage image = getImage();
@@ -22,5 +24,15 @@ public class EnemyBullet extends Actor
     {
         setRotation(-180);
         move(1);
-    }    
+        
+        Actor sophia = getOneObjectAtOffset(0, 0, Sophia.class);
+        if(sophia != null){
+            handleCollisionSophia(sophia);
+        }
+    }
+    
+    protected void handleCollisionSophia(Actor sophia){
+        sophia.damage(damage);
+        getWorld().removeObject(this);
+    }
 }

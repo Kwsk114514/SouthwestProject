@@ -8,6 +8,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Sophia extends Actor
 {
+    private int baseHP = 100;
+    private int HP = baseHP;
     /**
      * Act - do whatever the Sophia wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
@@ -16,8 +18,7 @@ public class Sophia extends Actor
     public void act() 
     {
         // Add your action code here.
-        
-        
+       
        if( Greenfoot.isKeyDown( "right" ) ){
         setRotation(0);
         move(1);
@@ -38,4 +39,12 @@ public class Sophia extends Actor
 
 
     }    
+    public void damage(int damage)
+    {
+        Actor hpbar = getWorld().getObjects(HPbar.class)[0];
+        
+        HP -= damage;
+        
+        hpbar.setHP(HP / baseHP);
+    }
 }
