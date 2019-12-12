@@ -9,6 +9,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class EnemyBullet extends Actor
 {
     private int damage = 10;
+    private int speed = 2;
     
     public EnemyBullet()
     {

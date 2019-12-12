@@ -11,6 +11,12 @@ public class Sophia extends Actor
     private int speed = 2;
     private int baseHP = 100;
     private int HP = baseHP;
+    
+    private long interval = 500;
+    
+    private long prevTime = System.currentTimeMillis();
+    private long elapsedTime = 0;
+    
     /**
      * Act - do whatever the Sophia wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
@@ -42,6 +48,17 @@ public class Sophia extends Actor
         }
 
         setLocation(x, y);
+        
+        long nowTime = System.currentTimeMillis();
+        long deltaTime = nowTime - prevTime;
+        elapsedTime += deltaTime;
+        
+        if(Greenfoot.isKeyDown("z") && elapsedTime >= interval){
+            getWorld().addObject(new PlayerBullet(), getX(), getY());
+            elapsedTime = 0;
+        }
+        
+        prevTime = nowTime;
 
     }    
     public void damage(int damage)
