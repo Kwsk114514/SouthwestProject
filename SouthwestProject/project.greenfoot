@@ -25,8 +25,13 @@ dependency6.to=PlayerBullet
 dependency6.type=UsesDependency
 editor.fx.0.height=739
 editor.fx.0.width=816
+<<<<<<< HEAD
 editor.fx.0.x=552
 editor.fx.0.y=100
+=======
+editor.fx.0.x=327
+editor.fx.0.y=93
+>>>>>>> 6099f40103686ad0907e52bbb628cb9fc5316cc4
 height=905
 package.numDependencies=6
 package.numTargets=7
@@ -96,5 +101,5 @@ target7.y=0
 version=3.0.0
 width=1561
 world.lastInstantiated=Stage1
-xPosition=93
-yPosition=34
+xPosition=0
+yPosition=3

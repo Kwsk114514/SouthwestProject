@@ -26,9 +26,16 @@ public class EnemyBullet extends Actor
         setRotation(-180);
         move(1);
         
+        int x = getX();
+        int y = getY();
+        
         Sophia sophia = (Sophia)getOneObjectAtOffset(0, 0, Sophia.class);
         if(sophia != null){
             handleCollisionSophia(sophia);
+        }
+        
+        if(x<=0||y<=0||x>=1279||y>=719){
+            getWorld().removeObject(this);
         }
     }
     
