@@ -15,6 +15,7 @@ public class Stage1 extends World
     private int scroll_vel = -1;
     private int imgpos1_x = 0;
     private int imgpos2_x = 2862;
+    
     /**
      * Constructor for objects of class MyWorld.
      * 
@@ -25,6 +26,10 @@ public class Stage1 extends World
         background_img.scale(2862, 720);
         myworld_img.drawImage(background_img, imgpos1_x, 0);
         myworld_img.drawImage(background_img, imgpos2_x, 0);
+        
+        addObject(new Sophia(), 200, getHeight() / 2);
+        addObject(new GameManager(), -1, -1);
+        
     }
     public void act()
     {

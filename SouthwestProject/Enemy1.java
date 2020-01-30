@@ -8,6 +8,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Enemy1 extends Actor
 {
+    private int baseHP = 50;
+    private int HP = baseHP;
     
     private long interval = 1000;
     
@@ -35,5 +37,13 @@ public class Enemy1 extends Actor
         }
         
         prevTime = nowTime;
-    }    
+    }
+    
+    public void damage(int damage){
+        HP -= damage;
+        
+        if(HP <= 0){
+            getWorld().removeObject(this);
+        }
+    }
 }
