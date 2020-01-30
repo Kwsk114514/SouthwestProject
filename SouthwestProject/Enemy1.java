@@ -11,7 +11,7 @@ public class Enemy1 extends Actor
     private int baseHP = 50;
     private int HP = baseHP;
     
-    private long interval = 1000;
+    private long interval = 2000;
     
     private long prevTime = System.currentTimeMillis();
     private long elapsedTime = 0;

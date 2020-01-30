@@ -24,7 +24,6 @@ dependency5.type=UsesDependency
 dependency6.from=EnemyManager
 dependency6.to=Enemy1
 dependency6.type=UsesDependency
-<<<<<<< HEAD
 dependency7.from=PlayerBullet
 dependency7.to=Enemy1
 dependency7.type=UsesDependency
@@ -36,25 +35,11 @@ dependency9.to=PlayerBullet
 dependency9.type=UsesDependency
 editor.fx.0.height=739
 editor.fx.0.width=816
-editor.fx.0.x=731
-editor.fx.0.y=97
+editor.fx.0.x=552
+editor.fx.0.y=100
 height=1056
 package.numDependencies=9
 package.numTargets=8
-=======
-editor.fx.0.height=739
-editor.fx.0.width=816
-<<<<<<< HEAD
-editor.fx.0.x=552
-editor.fx.0.y=100
-=======
-editor.fx.0.x=327
-editor.fx.0.y=93
->>>>>>> 6099f40103686ad0907e52bbb628cb9fc5316cc4
-height=905
-package.numDependencies=6
-package.numTargets=7
->>>>>>> de8631b588b2f71acde89a81b9f14d73e95c2b07
 project.charset=UTF-8
 publish.hasSource=false
 publish.locked=true
@@ -112,7 +97,6 @@ target6.width=80
 target6.x=0
 target6.y=0
 target7.height=50
-<<<<<<< HEAD
 target7.name=PlayerBullet
 target7.showInterface=false
 target7.type=ClassTarget
@@ -126,20 +110,8 @@ target8.type=ClassTarget
 target8.width=80
 target8.x=0
 target8.y=0
-=======
-target7.name=MyWorld
-target7.showInterface=false
-target7.type=ClassTarget
-target7.width=80
-target7.x=0
-target7.y=0
->>>>>>> de8631b588b2f71acde89a81b9f14d73e95c2b07
 version=3.0.0
 width=1936
 world.lastInstantiated=Stage1
 xPosition=0
-<<<<<<< HEAD
 yPosition=0
-=======
-yPosition=3
->>>>>>> de8631b588b2f71acde89a81b9f14d73e95c2b07
