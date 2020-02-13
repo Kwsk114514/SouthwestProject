@@ -17,6 +17,8 @@ public class Sophia extends Actor
     private long prevTime = System.currentTimeMillis();
     private long elapsedTime = 0;
     
+    private boolean prevKeyDownZ = false;
+    
     /**
      * Act - do whatever the Sophia wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
@@ -53,9 +55,14 @@ public class Sophia extends Actor
         long deltaTime = nowTime - prevTime;
         elapsedTime += deltaTime;
         
-        if(Greenfoot.isKeyDown("z") && elapsedTime >= interval){
-            getWorld().addObject(new PlayerBullet(), getX(), getY());
-            elapsedTime = 0;
+        if(Greenfoot.isKeyDown("z")){
+            if(!prevKeyDownZ || elapsedTime >= interval){
+                getWorld().addObject(new PlayerBullet(), getX(), getY());
+                elapsedTime = 0;
+            }
+            prevKeyDownZ = true;
+        }else{
+            prevKeyDownZ = false;
         }
         
         prevTime = nowTime;
