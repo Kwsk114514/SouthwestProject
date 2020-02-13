@@ -44,6 +44,7 @@ public class GameManager extends Actor
         {
             getWorld().addObject(new GameOverImage(), -100, worldHeight);
             gameFlag = setFlag;
+            prevTime = System.currentTimeMillis();
         }
     }
     public boolean getGameFlag()

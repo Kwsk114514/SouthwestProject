@@ -58,11 +58,19 @@ dependency8.type=UsesDependency
 dependency9.from=EnemyManager
 dependency9.to=EnemySchedule
 dependency9.type=UsesDependency
+<<<<<<< HEAD
 editor.fx.0.height=0
 editor.fx.0.width=0
 editor.fx.0.x=0
 editor.fx.0.y=0
 height=905
+=======
+editor.fx.0.height=739
+editor.fx.0.width=816
+editor.fx.0.x=806
+editor.fx.0.y=231
+height=1056
+>>>>>>> 2e35d25f3e3b3fca36b2e78de9d25f8d8688d412
 package.numDependencies=17
 package.numTargets=11
 project.charset=UTF-8
@@ -118,7 +126,7 @@ target4.height=50
 target4.name=Enemy1
 target4.showInterface=false
 target4.type=ClassTarget
-target4.width=100
+target4.width=80
 target4.x=0
 target4.y=0
 target5.height=50
@@ -159,5 +167,10 @@ target9.y=0
 version=3.0.0
 width=1561
 world.lastInstantiated=Stage1
+<<<<<<< HEAD
 xPosition=2
 yPosition=39
+=======
+xPosition=0
+yPosition=0
+>>>>>>> 2e35d25f3e3b3fca36b2e78de9d25f8d8688d412
