@@ -21,24 +21,17 @@ public class GameOverImage extends Actor
         worldWidth = world.getWidth();
         worldHeight = world.getHeight();
         setLocation(worldWidth/2, 0);
-        goalTimeStep = 100;
+        getImage().setTransparency(0);
+        goalTimeStep = 1000;
     }
     public void act() 
     {
-        if(timeStep <= 100)
+        if(timeStep <= 1000)
         {
             setLocation(worldWidth/2, (int)(worldHeight*((double)timeStep/goalTimeStep)/2));
+            setRotation((int)(timeStep*1.1));
+            getImage().setTransparency((int)((double)timeStep/goalTimeStep*255));
         }
-        else if(timeStep > 100 && timeStep <= 110 && goalTimeStep == 100)
-        {
-            goalTimeStep = 300;
-        }
-        else if(timeStep <= 100 && timeStep <= 300)
-        {
-            GreenfootImage image = getImage();
-            image.scale(0, 0);
-            setImage(image);
-        }
-        timeStep += (goalTimeStep - timeStep)*0.08;
+        timeStep += (goalTimeStep - timeStep)*0.025;
     }    
 }

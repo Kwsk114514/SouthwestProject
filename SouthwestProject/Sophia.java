@@ -71,7 +71,7 @@ public class Sophia extends Actor
         hpbar.setHP((double)HP / baseHP);
         if(HP <= 0)
         {
-            manager.setGameFlag(1);
+            manager.setGameFlag(true);
             getImage().setTransparency(50);
         }
     }

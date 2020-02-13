@@ -12,11 +12,12 @@ public class GameManager extends Actor
      * Act - do whatever the GameManager wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
-    private int gameFlag = 0;
+    private boolean gameFlag = false;
     private int worldWidth, worldHeight;
-    private Enemy1 [] enemys;
-    private int enemySize = 0;
-    private int anySpeed = 0;
+    
+    private long interval = 1000;
+    private long prevTime = System.currentTimeMillis();
+    private long elapsedTime = 0;
     protected void addedToWorld(World world)
     {
         worldWidth = world.getWidth();
@@ -24,27 +25,31 @@ public class GameManager extends Actor
     }
     public void act() 
     {
-        if(gameFlag == 1)
+        if(gameFlag == true)
         {
-            for(int i=0;i < enemySize;i++)
-            {
-                enemys[i].setLocation(enemys[i].getX(), enemys[i].getY()-anySpeed);
+            long nowTime = System.currentTimeMillis();
+            long deltaTime = nowTime - prevTime;
+            elapsedTime += deltaTime;
+            if(elapsedTime >= 12000){
+                World title = new Title();
+                Greenfoot.setWorld(title);
+                elapsedTime = 0;
             }
-            anySpeed += 1;
+            prevTime = nowTime;
         }
     }
-    public void setGameFlag(int flag)
+    public void setGameFlag(boolean setFlag)
     {
-        if(gameFlag != 1 && flag == 1)
+        if(gameFlag != true && setFlag == true)
         {
             getWorld().addObject(new GameOverImage(), -100, worldHeight);
-            enemys = new Enemy1 [getWorld().getObjects(Enemy1.class).size()];
-            for(int i=0;i < getWorld().getObjects(Enemy1.class).size();i++)
-            {
-                enemys[i] = getWorld().getObjects(Enemy1.class).get(i);
-            }
-            enemySize = enemys.length;
-            gameFlag = flag;
+            gameFlag = setFlag;
         }
+    }
+    public boolean getGameFlag()
+    {
+        //false:通常ゲーム進行
+        //true:プレイヤー死亡時
+        return gameFlag;
     }
 }

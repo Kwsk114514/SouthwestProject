@@ -27,9 +27,9 @@ public class Stage1 extends World
         myworld_img.drawImage(background_img, imgpos1_x, 0);
         myworld_img.drawImage(background_img, imgpos2_x, 0);
         
-        addObject(new Sophia(), 200, getHeight() / 2);
         addObject(new GameManager(), -1, -1);
-        
+        addObject(new EnemyManager(), 0, 0);
+        addObject(new Sophia(), 200, getHeight() / 2);
     }
     public void act()
     {

@@ -27,9 +27,15 @@ public class PlayerBullet extends Actor
         setRotation(0);
         move(speed);
         
+        int x = getX();
+        int y = getY();
+        
         Enemy1 enemy = (Enemy1)getOneObjectAtOffset(0, 0, Enemy1.class);
         if(enemy != null){
             handleCollisionEnemy1(enemy);
+        }
+        if(x<=0||y<=0||x>=1279||y>=719){
+            getWorld().removeObject(this);
         }
     }
     
