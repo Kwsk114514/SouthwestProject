@@ -70,6 +70,7 @@ public class Sophia extends Actor
     }    
     public void damage(int damage)
     {
+        Greenfoot.playSound("damage7.mp3");
         HPbar hpbar = getWorld().getObjects(HPbar.class).get(0);
         
         HP -= damage;

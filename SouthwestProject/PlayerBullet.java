@@ -16,6 +16,7 @@ public class PlayerBullet extends Actor
         GreenfootImage image = getImage();
         image.scale(10, 10);
         setImage(image);
+        Greenfoot.playSound("shoot2.mp3");
     }
     
     /**
