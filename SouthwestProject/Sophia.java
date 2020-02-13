@@ -72,9 +72,15 @@ public class Sophia extends Actor
     {
         Greenfoot.playSound("damage7.mp3");
         HPbar hpbar = getWorld().getObjects(HPbar.class).get(0);
+        GameManager manager = getWorld().getObjects(GameManager.class).get(0);
         
         HP -= damage;
         
         hpbar.setHP((double)HP / baseHP);
+        if(HP <= 0)
+        {
+            manager.setGameFlag(true);
+            getImage().setTransparency(50);
+        }
     }
 }

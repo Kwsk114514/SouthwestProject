@@ -23,6 +23,7 @@ public class EnemyManager extends Actor
     private long prevTime = -1;
     private long elapsedTime = 0;
     
+    private GameManager gameManager;
     public EnemyManager()
     {
         getImage().setTransparency(0);
@@ -63,7 +64,7 @@ public class EnemyManager extends Actor
     
     protected void addedToWorld(World world)
     {
-        
+        gameManager = getWorld().getObjects(GameManager.class).get(0);
     }
     
     /**
@@ -72,23 +73,26 @@ public class EnemyManager extends Actor
      */
     public void act() 
     {
-        if(prevTime == -1) prevTime = System.currentTimeMillis();
+        if(gameManager.getGameFlag() == false)
+        {
+            if(prevTime == -1) prevTime = System.currentTimeMillis();
         
-        long nowTime = System.currentTimeMillis();
-        long deltaTime = nowTime - prevTime;
-        elapsedTime += deltaTime;
-        // getWorld().showText("time: " + elapsedTime, 100, 100);
+            long nowTime = System.currentTimeMillis();
+            long deltaTime = nowTime - prevTime;
+            elapsedTime += deltaTime;
+            // getWorld().showText("time: " + elapsedTime, 100, 100);
         
-        for(int i = 0; i < currentTimeline.size(); i++){
-            EnemySchedule s = currentTimeline.get(0);
-            if(s.getTime() <= elapsedTime){
-                currentTimeline.remove(0);
-                getWorld().addObject(new Enemy1(), s.getX(), s.getY());
-            }else{
+            for(int i = 0; i < currentTimeline.size(); i++){
+                EnemySchedule s = currentTimeline.get(0);
+                if(s.getTime() <= elapsedTime){
+                    currentTimeline.remove(0);
+                    getWorld().addObject(new Enemy1(), s.getX(), s.getY());
+                }else{
                 break;
+                }
             }
-        }
 
-        prevTime = nowTime;
+            prevTime = nowTime;
+        }
     }    
 }

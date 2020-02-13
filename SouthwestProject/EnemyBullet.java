@@ -39,7 +39,8 @@ public class EnemyBullet extends Actor
         }
     }
     
-    protected void handleCollisionSophia(Sophia sophia){
+    protected void handleCollisionSophia(Sophia sophia)
+    {
         sophia.damage(damage);
         getWorld().removeObject(this);
     }
